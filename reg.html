@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Практическая часть | Site</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet"/>
+    <style>
+        @font-face {
+            font-family: Cyber;
+            src: url("https://assets.codepen.io/605876/Blender-Pro-Bold.otf");
+            font-display: swap;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            justify-content: center;
+            min-height: 100vh;
+            font-family: 'Cyber', sans-serif;
+            background-color: #0d0d0d;
+            color: #ff004d;
+        }
+
+        .header {
+            position: relative;
+            height: 50px;
+            background-color: #000;
+            display: flex;
+            align-items: center;
+            padding: 0 20px;
+            width: 100%;
+            border: 2px solid #ff003c;
+            margin: -10px 10px 10px 10px;
+        }
+
+        .header-title {
+            font-size: 4rem;
+            margin-left: 0px;
+            margin-top: -400px;
+            white-space: nowrap;
+            overflow: hidden;
+            display: inline-block;
+            text-align: center;
+            flex-grow: 1;
+            border: 2px solid #ff004d;
+        }
+
+        .header-title span {
+            display: inline-block;
+            opacity: 0;
+            animation: fadeIn 0.5s forwards;
+        }
+
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        .flex-container {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .neon-border {
+            border: 2px solid #ff004d;
+            box-shadow: 0 0 5px #ff004d, 0 0 10px #ff004d, 0 0 20px #ff004d, 0 0 40px #ff004d;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            padding: 20px;
+            margin: 20px;
+            width: 300px;
+        }
+
+        .cybr-btn {
+            --primary: hsl(var(--primary-hue), 85%, calc(var(--primary-lightness, 50) * 1%));
+            --shadow-primary: hsl(var(--shadow-primary-hue), 90%, 50%);
+            --primary-hue: 0;
+            --primary-lightness: 50;
+            --color: hsl(0, 0%, 100%);
+            --font-size: 26px;
+            --shadow-primary-hue: 180;
+            --label-size: 9px;
+            --shadow-secondary-hue: 60;
+            --shadow-secondary: hsl(var(--shadow-secondary-hue), 90%, 60%);
+            --clip: polygon(0 0, 100% 0, 100% 100%, 95% 100%, 95% 90%, 85% 90%, 85% 100%, 8% 100%, 0 70%);
+            --border: 4px;
+            --shimmy-distance: 5;
+            font-family: 'Cyber', sans-serif;
+            color: var(--color);
+            cursor: pointer;
+            background: transparent;
+            text-transform: uppercase;
+            font-size: var(--font-size);
+            outline: transparent;
+            letter-spacing: 2px;
+            position: relative;
+            font-weight: 700;
+            border: none;
+            min-width: 300px;
+            height: 75px;
+            line-height: 75px;
+            transition: background 0.2s;
+            margin-top: auto;
+        }
+
+        .cybr-btn:hover {
+            --primary: hsl(var(--primary-hue), 85%, calc(var(--primary-lightness, 50) * 0.8%));
+        }
+
+        .cybr-btn:after,
+        .cybr-btn:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            clip-path: var(--clip);
+            z-index: -1;
+        }
+
+        .cybr-btn:before {
+            background: var(--shadow-primary);
+            transform: translate(var(--border), 0);
+        }
+
+        .cybr-btn:after {
+            background: var(--primary);
+        }
+
+        .cybr-btn__glitch {
+            position: absolute;
+            top: calc(var(--border) * -1);
+            left: calc(var(--border) * -1);
+            right: calc(var(--border) * -1);
+            bottom: calc(var(--border) * -1);
+            background: var(--shadow-primary);
+            text-shadow: 2px 2px var(--shadow-primary), -2px -2px var(--shadow-secondary);
+            clip-path: var(--clip);
+            animation: glitch 2s infinite;
+            display: none;
+        }
+
+        .cybr-btn:hover .cybr-btn__glitch {
+            display: block;
+        }
+
+        @keyframes glitch {
+            0% {
+                clip-path: var(--clip);
+            }
+            2%, 8% {
+                clip-path: var(--clip);
+                transform: translate(calc(var(--shimmy-distance) * -1%), 0);
+            }
+            6% {
+                clip-path: var(--clip);
+                transform: translate(calc(var(--shimmy-distance) * 1%), 0);
+            }
+            9% {
+                clip-path: var(--clip);
+                transform: translate(0, 0);
+            }
+            10% {
+                clip-path: var(--clip);
+                transform: translate(calc(var(--shimmy-distance) * 1%), 0);
+            }
+            13% {
+                clip-path: var(--clip);
+                transform: translate(0, 0);
+            }
+            14%, 21% {
+                clip-path: var(--clip);
+                transform: translate(calc(var(--shimmy-distance) * 1%), 0);
+            }
+            25% {
+                clip-path: var(--clip);
+                transform: translate(calc(var(--shimmy-distance) * 1%), 0);
+            }
+            30% {
+                clip-path: var(--clip);
+                transform: translate(calc(var(--shimmy-distance) * -1%), 0);
+            }
+            35%, 45% {
+                clip-path: var(--clip);
+                transform: translate(calc(var(--shimmy-distance) * -1%));
+            }
+            40% {
+                clip-path: var(--clip);
+                transform: translate(calc(var(--shimmy-distance) * 1%));
+            }
+            50% {
+                clip-path: var(--clip);
+                transform: translate(0, 0);
+            }
+            55% {
+                clip-path: var(--clip);
+                transform: translate(calc(var(--shimmy-distance) * 1%), 0);
+            }
+            60% {
+                clip-path: var(--clip);
+                transform: translate(0, 0);
+            }
+            31%, 61%, 100% {
+                clip-path: var(--clip);
+            }
+        }
+    </style>
+</head>
+<body class="bg-black text-white">
+    <header class="header">
+        <h1 class="header-title neon-text">
+            <span>К</span><span>о</span><span>м</span><span>п</span><span>л</span><span>е</span><span>к</span><span>т</span><span>у</span><span>ю</span><span>щ</span><span>и</span><span>е</span>
+        </h1>
+    </header>
+    <main class="p-6 flex flex-col space-y-12">
+        <div class="flex-container">
+            <section class="neon-border p-6" id="cpu">
+                <h2 class="text-3xl neon-text mb-4">Процессор (CPU)</h2>
+                <p class="text-lg mb-6">
+                    Процессор — это основной компонент компьютера, отвечающий за выполнение вычислений и обработку данных. Он выполняет инструкции программ и управляет работой других компонентов системы.
+                </p>
+                <button class="cybr-btn">
+                    Узнать больше<span aria-hidden>_</span>
+                    <span aria-hidden class="cybr-btn__glitch">Узнать больше_</span>
+                </button>
+            </section>
+            <section class="neon-border p-6" id="gpu">
+                <h2 class="text-3xl neon-text mb-4">Видеокарта (GPU)</h2>
+                <p class="text-lg mb-6">
+                    Видеокарта отвечает за обработку графики и вывод изображения на экран. Она позволяет запускать игры и приложения с высокой графикой, а также поддерживает работу с несколькими мониторами.
+                </p>
+                <button class="cybr-btn">
+                    Узнать больше<span aria-hidden>_</span>
+                    <span aria-hidden class="cybr-btn__glitch">Узнать больше_</span>
+                </button>
+            </section>
+            <section class="neon-border p-6" id="ram">
+                <h2 class="text-3xl neon-text mb-4">Оперативная память (RAM)</h2>
+                <p class="text-lg mb-6">
+                    Оперативная память используется для временного хранения данных, которые процессор использует в данный момент. Чем больше оперативной памяти, тем больше программ можно запускать одновременно без замедления работы системы.
+                </p>
+                <button class="cybr-btn">
+                    Узнать больше<span aria-hidden>_</span>
+                    <span aria-hidden class="cybr-btn__glitch">Узнать больше_</span>
+                </button>
+            </section>
+            <section class="neon-border p-6" id="motherboard">
+                <h2 class="text-3xl neon-text mb-4">Материнская плата</h2>
+                <p class="text-lg mb-6">
+                    Материнская плата соединяет все компоненты компьютера и обеспечивает их взаимодействие. Она содержит слоты для процессора, оперативной памяти, видеокарты и других устройств, а также порты для подключения периферии.
+                </p>
+                <button class="cybr-btn">
+                    Узнать больше<span aria-hidden>_</span>
+                    <span aria-hidden class="cybr-btn__glitch">Узнать больше_</span>
+                </button>
+            </section>
+            <section class="neon-border p-6" id="storage">
+                <h2 class="text-3xl neon-text mb-4">Накопитель (HDD/SSD)</h2>
+                <p class="text-lg mb-6">
+                    Накопитель используется для хранения данных и программ. SSD (твердотельные накопители) обеспечивают более высокую скорость чтения и записи по сравнению с HDD (жесткими дисками), что значительно ускоряет загрузку системы и приложений.
+                </p>
+                <button class="cybr-btn">
+                    Узнать больше<span aria-hidden>_</span>
+                    <span aria-hidden class="cybr-btn__glitch">Узнать больше_</span>
+                </button>
+            </section>
+            <section class="neon-border p-6" id="psu">
+                <h2 class="text-3xl neon-text mb-4">Блок питания (PSU)</h2>
+                <p class="text-lg mb-6">
+                    Блок питания преобразует электрическую энергию из сети в напряжение, необходимое для работы компонентов компьютера. Он обеспечивает стабильное питание и защищает систему от перепадов напряжения.
+                </p>
+                <button class="cybr-btn">
+                    Узнать больше<span aria-hidden>_</span>
+                    <span aria-hidden class="cybr-btn__glitch">Узнать больше_</span>
+                </button>
+            </section>
+            <section class="neon-border p-6" id="sound-card">
+                <h2 class="text-3xl neon-text mb-4">Звуковая карта</h2>
+                <p class="text-lg mb-6">
+                    Звуковая карта отвечает за обработку звука в компьютере. Она позволяет подключать акустические системы и микрофоны, обеспечивая высокое качество звука для игр, музыки и видео.
+                </p>
+                <button class="cybr-btn">
+                    Узнать больше<span aria-hidden>_</span>
+                    <span aria-hidden class="cybr-btn__glitch">Узнать больше_</span>
+                </button>
+            </section>
+            <section class="neon-border p-6" id="case">
+                <h2 class="text-3xl neon-text mb-4">Корпус</h2>
+                <p class="text-lg mb-6">
+                    Корпус компьютера защищает внутренние компоненты от внешних воздействий и обеспечивает их охлаждение. Он также предоставляет места для установки дополнительных устройств и подключения кабелей.
+                </p>
+                <button class="cybr-btn">
+                    Узнать больше<span aria-hidden>_</span>
+                    <span aria-hidden class="cybr-btn__glitch">Узнать больше_</span>
+                </button>
+            </section>
+            <section class="neon-border p-6" id="cooling-system">
+                <h2 class="text-3xl neon-text mb-4">Система охлаждения</h2>
+                <p class="text-lg mb-6">
+                    Система охлаждения предназначена для поддержания оптимальной температуры компонентов компьютера. Она может быть воздушной или жидкостной и предотвращает перегрев, что увеличивает срок службы оборудования.
+                </p>
+                <button class="cybr-btn">
+                    Узнать больше<span aria-hidden>_</span>
+                    <span aria-hidden class="cybr-btn__glitch">Узнать больше_</span>
+                </button>
+            </section>
+        </div>
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const title = document.querySelector('.header-title');
+            const letters = title.querySelectorAll('span');
+            
+            letters.forEach((letter, index) => {
+                letter.style.animationDelay = `${index * 0.1}s`;
+            });
+
+            // Обработка кликов на кнопках
+            document.querySelectorAll('.cybr-btn').forEach(button => {
+                button.addEventListener('click', function() {
+                    const section = this.closest('.neon-border');
+                    const sectionId = section.id;
+                    const fileName = `View${sectionId.charAt(0).toUpperCase() + sectionId.slice(1)}.html`;
+                    window.location.href = fileName;
+                });
+            });
+
+            // Выравнивание высоты карточек
+            const sections = document.querySelectorAll('.neon-border');
+            let maxHeight = 0;
+
+            sections.forEach(section => {
+                const height = section.offsetHeight;
+                if (height > maxHeight) {
+                    maxHeight = height;
+                }
+            });
+
+            sections.forEach(section => {
+                section.style.height = `${maxHeight}px`;
+            });
+        });
+    </script>
+</body>
+</html>

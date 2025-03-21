@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Процессоры Intel и AMD | Site</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet"/>
+    <style>
+        @font-face {
+            font-family: Cyber;
+            src: url("https://assets.codepen.io/605876/Blender-Pro-B.otf");
+            font-display: swap;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            justify-content: center;
+            min-height: 100vh;
+            font-family: 'Cyber', sans-serif;
+            background-color: #0d0d0d;
+            color: #ff004d;
+        }
+
+        .header {
+            position: relative;
+            height: 50px;
+            background-color: #000;
+            display: flex;
+            align-items: center;
+            padding: 0 20px;
+            width: 100%;
+            border: #ff003c;
+            border-width: 2px;
+            margin: -10px 10px 10px 10px;
+        }
+
+        .header-title {
+            font-size: 4rem;
+            margin-left: 0px;
+            margin-top: -400px;
+            white-space: nowrap;
+            overflow: hidden;
+            display: inline-block;
+            text-align: center;
+            flex-grow: 1;
+            border: 2px solid #ff004d;
+        }
+
+        .header-title span {
+            display: inline-block;
+            opacity: 0;
+            animation: fadeIn 0.5s forwards;
+        }
+
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        .menu-btn {
+            background-color: #ff004c;
+            color: #fff;
+            padding: 20px 50px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            font-weight: bold;
+            letter-spacing: 1px;
+            position: fixed;
+            overflow: hidden;
+            top: 138px;
+            left: 50px;
+        }
+
+        .menu-btn:hover {
+            background-color: #00bfff;
+            color: #0d0d0d;
+            box-shadow: 0 0 20px #00bfff;
+        }
+
+        .flex-container {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .neon-border {
+            border: 2px solid #ff004d;
+            box-shadow: 0 0 5px #ff004d, 0 0 10px #ff004d, 0 0 20px #ff004d, 0 0 40px #ff004d;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            padding: 20px;
+            margin: 20px;
+            width: 300px;
+        }
+
+        .glow-on-hover:hover {
+            box-shadow: 0 0 20px #ff004d, 0 30px #ff004d, 0 0 40px #ff004d, 0 0 50px #ff004d;
+        }
+
+        .price {
+            font-size: 1.5rem;
+            color: #00bfff;
+            text-align: center;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body class="bg-black text-white">
+    <header class="header">
+        <h1 class="header-title neon-text">
+            <span>П</span><span>р</span><span>о</span><span>ц</span><span>е</span><span>с</span><span>с</span><span>о</span><span>р</span><span>ы</span> <span>(</span><span>I</span><span>N</span><span>T</span><span>E</span><span>L</span> <span>/</span> <span>A</span><span>M</span><span>D</span><span>)</span>
+        </h1>
+    </header>
+    <main class="p-6 flex flex-col space-y-12">
+        <div class="flex-container">
+            <!-- Intel 10th Gen -->
+            <section class="neon-border p-6" id="i3-10100">
+                <h2 class="text-3xl neon-text mb-4">Intel Core i3-10100</h2>
+                <p class="text-lg mb-6">
+                    Ядра: 4 (4P)<br>
+                    Частота: 3.6 - 4.3 ГГц<br>
+                    Сокет: LGA 1200<br>
+                    Кэш: L1 - 0.5 MB, L2 - 1 MB, L3 - 6 MB<br>
+                    Поддерживаемая память: DDR4<br>
+                    Тепловыделение: 65 Вт<br>
+                    Техпроцесс: 14 нм
+                </p>
+                <div class="price">12 000 ₽</div>
+            </section>
+
+            <section class="neon-border p-6" id="i5-10400">
+                <h2 class="text-3xl neon-text mb-4">Intel Core i5-10400</h2>
+                <p class="text-lg mb-6">
+                    Ядра: 6 (6P)<br>
+                    Частота: 2.9 - 4.3 ГГц<br>
+                    Сокет: LGA 1200<br>
+                    Кэш: L1 - 0.5 MB, L2 - 1.5 MB, L3 - 12 MB<br>
+                    Поддерживаемая память: DDR4<br>
+                    Тепловыделение: 65 Вт<br>
+                    Техпроцесс: 14 нм
+                </p>
+                <div class="price">20 000 ₽</div>
+            </section>
+
+            <section class="neon-border p-6" id="i7-10700">
+                <h2 class="text-3xl neon-text mb-4">Intel Core i7-10700</h2>
+                <p class="text-lg mb-6">
+                    Ядра: 8 (8P)<br>
+                    Частота: 2.9 - 4.8 ГГц<br>
+                    Сокет: LGA 1200<br>
+                    Кэш: L1 - 0.5 MB, L2 - 2 MB, L3 - 16 MB<br>
+                    Поддерживаемая память: DDR4<br>
+                    Тепловыделение: 65 Вт<br>
+                    Техпроцесс: 14 нм
+                </p>
+                <div class="price">30 000 ₽</div>
+            </section>
+
+            <section class="neon-border p-6" id="i9-10900">
+                <h2 class="text-3xl neon-text mb-4">Intel Core i9-10900</h2>
+                <p class="text-lg mb-6">
+                    Ядра: 10 (10P)<br>
+                    Частота: 2.8 - 5.2 ГГц<br>
+                    Сокет: LGA 1200<br>
+                    Кэш: L1 - 0.5 MB, L2 - 2.5 MB, L3 - 20 MB<br>
+                    Поддерживаемая память: DDR4<br>
+                    Тепловыделение: 65 Вт<br>
+                    Техпроцесс: 14 нм
+                </p>
+                <div class="price">45 000 ₽</div>
+            </section>
+
+            <!-- Intel 11th Gen -->
+            <section class="neon-border p-6" id="i5-11400">
+                <h2 class="text-3xl neon-text mb-4">Intel Core i5-11400</h2>
+                <p class="text-lg mb-6">
+                    Ядра: 6 (6P)<br>
+                    Частота: 2.6 - 4.4 ГГц<br>
+                    Сокет: LGA 1200<br>
+                    Кэш: L1 - 0.5 MB, L2 - 1.5 MB, L3 - 12 MB<br>
+                    Поддерживаемая память: DDR4<br>
+                    Тепловыделение: 65 Вт<br>
+                    Техпроцесс: 14 нм
+                </p>
+                <div class="price">22 000 ₽</div>
+            </section>
+
+            <section class="neon-border p-6" id="i7-11700">
+                <h2 class="text-3xl neon-text mb-4">Intel Core i7-11700</h2>
+                <p class="text-lg mb-6">
+                    Ядра: 8 (8P)<br>
+                    Частота: 2.5 - 4.9 ГГц<br>
+                    Сокет: LGA 1200<br>
+                    Кэш: L1 - 0.5 MB, L2 - 2 MB, L3 - 16 MB<br>
+                    Поддерживаемая память: DDR4<br>
+                    Тепловыделение: 65 Вт<br>
+                    Техпроцесс: 14 нм
+                </p>
+                <div class="price">35 000 ₽</div>
+            </section>
+
+            <section class="neon-border p-6" id="i9-11900">
+                <h2 class="text-3xl neon-text mb-4">Intel Core i9-11900</h2>
+                <p class="text-lg mb-6">
+                    Ядра: 8 (8P)<br>
+                    Частота: 2.5 - 5.2 ГГц<br>
+                    Сокет: LGA 1200<br>
+                    Кэш: L1 - 0.5 MB, L2 - 2 MB, L3 - 16 MB<br>
+                    Поддерживаемая память: DDR4<br>
+                    Тепловыделение: 65 Вт<br>
+                    Техпроцесс: 14 нм
+                </p>
+                <div class="price">50 000 ₽</div>
+            </section>
+
+            <!-- Intel 12th Gen -->
+            <section class="neon-border p-6" id="i5-12600k">
+                <h2 class="text-3xl neon-text mb-4">Intel Core i5-12600K</h2>
+                <p class="text-lg mb-6">
+                    Ядра: 10 (6P + 4E)<br>
+                    Частота: 3.7 - 4.9 ГГц<br>
+                    Сокет: LGA 1700<br>
+                    Кэш: L1 - 0.8 MB, L2 - 9.5 MB, L3 - 20 MB<br>
+                    Поддерживаемая память: DDR4/DDR5<br>
+                    Тепловыделение: 125 Вт<br>
+                    Техпроцесс: 10 нм
+                </p>
+                <div class="price">30 000 ₽</div>
+            </section>
+
+            <section class="neon-border p-6" id="i7-12700k">
+                <h2 class="text-3xl neon-text mb-4">Intel Core i7-12700K</h2>
+                <p class="text-lg mb-6">
+                    Ядра: 12 (8P + 4E)<br>
+                    Частота: 3.6 - 5.0 ГГц<br>
+                    Сокет: LGA 1700<br>
+                    Кэш: L1 - 1 MB, L2 - 12 MB, L3 - 25 MB<br>
+                    Поддерживаемая память: DDR4/DDR5<br>
+                    Тепловыделение: 125 Вт<br>
+                    Техпроцесс: 10 нм
+                </p>
+                <div class="price">40 000 ₽</div>
+            </section>
+
+            <section class="neon-border p-6" id="i9-12900k">
+                <h2 class="text-3xl neon-text mb-4">Intel Core i9-12900K</h2>
+                <p class="text-lg mb-6">
+                    Ядра: 16 (8P + 8E)<br>
+                    Частота: 3.2 - 5.2 ГГц<br>
+                    Сокет: LGA 1700<br>
+                    Кэш: L1 - 1.4 MB, L2 - 14 MB, L3 - 30 MB<br>
+                    Поддерживаемая память: DDR4/DDR5<br>
+                    Тепловыделение: 125 Вт<br>
+                    Техпроцесс: 10 нм
+                </p>
+                <div class="price">60 000 ₽</div>
+            </section>
+
+            <!-- Intel 13th Gen -->
+            <section class="neon-border p-6" id="i5-13600k">
+                <h2 class="text-3xl neon-text mb-4">Intel Core i5-13600K</h2>
+                <p class="text-lg mb-6">
+                    Ядра: 14 (6P + 8E)<br>
+                    Частота: 3.5 - 5.1 ГГц<br>
+                    Сокет: LGA 1700<br>
+                    Кэш: L1 - 1.1 MB, L2 - 11.5 MB, L3 - 24 MB<br>
+                    Поддерживаемая память: DDR4/DDR5<br>
+                    Тепловыделение: 125 Вт<br>
+                    Техпроцесс: 10 нм
+                </p>
+                <div class="price">35 000 ₽</div>
+            </section>
+
+            <section class="neon-border p-6" id="i7-13700k">
+                <h2 class="text-3xl neon-text mb-4">Intel Core i7-13700K</h2>
+                <p class="text-lg mb-6">
+                    Ядра: 16 (8P + 8E)<br>
+                    Частота: 3.4 - 5.4 ГГц<br>
+                    Сокет: LGA 1700<br>
+                    Кэш: L1 - 1.4 MB, L2 - 14 MB, L3 - 30 MB<br>
+                    Поддерживаемая память: DDR4/DDR5<br>
+                    Тепловыделение: 125 Вт<br>
+                    Техпроцесс: 10 нм
+                </p>
+                <div class="price">45 000 ₽</div>
+            </section>
+
+            <section class="neon-border p-6" id="i9-13900k">
+                <h2 class="text-3xl neon-text mb-4">Intel Core i9-13900K</h2>
+                <p class="text-lg mb-6">
+                    Ядра: 24 (8P + 16E)<br>
+                    Частота: 3.0 - 5.8 ГГц<br>
+                    Сокет: LGA 1700<br>
+                    Кэш: L1 - 2 MB, L2 - 32 MB, L3 - 36 MB<br>
+                    Поддерживаемая память: DDR4/DDR5<br>
+                    Тепловыделение: 125 Вт<br>
+                    Техпроцесс: 10 нм
+                </p>
+                <div class="price">70 000 ₽</div>
+            </section>
+
+            <!-- Intel 14th Gen -->
+            <section class="neon-border p-6" id="i5-14600k">
+                <h2 class="text-3xl neon-text mb-4">Intel Core i5-14600K</h2>
+                <p class="text-lg mb-6">
+                    Ядра: 14 (6P + 8E)<br>
+                    Частота: 3.5 - 5.3 ГГц<br>
+                    Сокет: LGA 1700<br>
+                    Кэш: L1 - 1.1 MB, L2 - 11.5 MB, L3 - 24 MB<br>
+                    Поддерживаемая память: DDR4/DDR5<br>
+                    Тепловыделение: 125 Вт<br>
+                    Техпроцесс: 10 нм
+                </p>
+                <div class="price">38 000 ₽</div>
+            </section>
+
+            <section class="neon-border p-6" id="i7-14700k">
+                <h2 class="text-3xl neon-text mb-4">Intel Core i7-14700K</h2>
+                <p class="text-lg mb-6">
+                    Ядра: 20 (8P + 12E)<br>
+                    Частота: 3.4 - 5.6 ГГц<br>
+                    Сокет: LGA 1700<br>
+                    Кэш: L1 - 1.4 MB, L2 - 20 MB, L3 - 33 MB<br>
+                    Поддерживаемая память: DDR4/DDR5<br>
+                    Тепловыделение: 125 Вт<br>
+                    Техпроцесс: 10 нм
+                </p>
+                <div class="price">50 000 ₽</div>
+            </section>
+
+            <section class="neon-border p-6" id="i9-14900k">
+                <h2 class="text-3xl neon-text mb-4">Intel Core i9-14900K</h2>
+                <p class="text-lg mb-6">
+                    Ядра: 24 (8P + 16E)<br>
+                    Частота: 3.2 - 6.0 ГГц<br>
+                    Сокет: LGA 1700<br>
+                    Кэш: L1 - 2 MB, L2 - 32 MB, L3 - 36 MB<br>
+                    Поддерживаемая память: DDR4/DDR5<br>
+                    Тепловыделение: 125 Вт<br>
+                    Техпроцесс: 10 нм
+                </p>
+                <div class="price">75 000 ₽</div>
+            </section>
+
+            <!-- AMD Ryzen 3000 Series -->
+            <section class="neon-border p-6" id="ryzen-5-3600">
+                <h2 class="text-3xl neon-text mb-4">AMD Ryzen 5 3600</h2>
+                <p class="text-lg mb-6">
+                    Ядра: 6 (12 потоков)<br>
+                    Частота: 3.6 - 4.2 ГГц<br>
+                    Сокет: AM4<br>
+                    Кэш: L1 - 384 KB, L2 - 3 MB, L3 - 32 MB<br>
+                    Поддерживаемая память: DDR4<br>
+                    Тепловыделение: 65 Вт<br>
+                    Техпроцесс: 7 нм
+                </p>
+                <div class="price">18 000 ₽</div>
+            </section>
+
+            <section class="neon-border p-6" id="ryzen-7-3700x">
+                <h2 class="text-3xl neon-text mb-4">AMD Ryzen 7 3700X</h2>
+                <p class="text-lg mb-6">
+                    Ядра: 8 (16 потоков)<br>
+                    Частота: 3.6 - 4.4 ГГц<br>
+                    Сокет: AM4<br>
+                    Кэш: L1 - 512 KB, L2 - 4 MB, L3 - 32 MB<br>
+                    Поддерживаемая память: DDR4<br>
+                    Тепловыделение: 65 Вт<br>
+                    Техпроцесс: 7 нм
+                </p>
+                <div class="price">25 000 ₽</div>
+            </section>
+
+            <section class="neon-border p-6" id="ryzen-9-3900x">
+                <h2 class="text-3xl neon-text mb-4">AMD Ryzen 9 3900X</h2>
+                <p class="text-lg mb-6">
+                    Ядра: 12 (24 потока)<br>
+                    Частота: 3.8 - 4.6 ГГц<br>
+                    Сокет: AM4<br>
+                    Кэш: L1 - 768 KB, L2 - 6 MB, L3 - 64 MB<br>
+                    Поддерживаемая память: DDR4<br>
+                    Тепловыделение: 105 Вт<br>
+                    Техпроцесс: 7 нм
+                </p>
+                <div class="price">40 000 ₽</div>
+            </section>
+
+            <!-- AMD Ryzen 5000 Series -->
+            <section class="neon-border p-6" id="ryzen-5-5600x">
+                <h2 class="text-3xl neon-text mb-4">AMD Ryzen 5 5600X</h2>
+                <p class="text-lg mb-6">
+                    Ядра: 6 (12 потоков)<br>
+                    Частота: 3.7 - 4.6 ГГц<br>
+                    Сокет: AM4<br>
+                    Кэш: L1 - 384 KB, L2 - 3 MB, L3 - 32 MB<br>
+                    Поддерживаемая память: DDR4<br>
+                    Тепловыделение: 65 Вт<br>
+                    Техпроцесс: 7 нм
+                </p>
+                <div class="price">22 000 ₽</div>
+            </section>
+
+            <section class="neon-border p-6" id="ryzen-7-5800x">
+                <h2 class="text-3xl neon-text mb-4">AMD Ryzen 7 5800X</h2>
+                <p class="text-lg mb-6">
+                    Ядра: 8 (16 потоков)<br>
+                    Частота: 3.8 - 4.7 ГГц<br>
+                    Сокет: AM4<br>
+                    Кэш: L1 - 512 KB, L2 - 4 MB, L3 - 32 MB<br>
+                    Поддерживаемая память: DDR4<br>
+                    Тепловыделение: 105 Вт<br>
+                    Техпроцесс: 7 нм
+                </p>
+                <div class="price">30 000 ₽</div>
+            </section>
+
+            <section class="neon-border p-6" id="ryzen-9-5900x">
+                <h2 class="text-3xl neon-text mb-4">AMD Ryzen 9 5900X</h2>
+                <p class="text-lg mb-6">
+                    Ядра: 12 (24 потока)<br>
+                    Частота: 3.7 - 4.8 ГГц<br>
+                    Сокет: AM4<br>
+                    Кэш: L1 - 768 KB, L2 - 6 MB, L3 - 64 MB<br>
+                    Поддерживаемая память: DDR4<br>
+                    Тепловыделение: 105 Вт<br>
+                    Техпроцесс: 7 нм
+                </p>
+                <div class="price">45 000 ₽</div>
+            </section>
+
+            <section class="neon-border p-6" id="ryzen-9-5950x">
+                <h2 class="text-3xl neon-text mb-4">AMD Ryzen 9 5950X</h2>
+                <p class="text-lg mb-6">
+                    Ядра: 16 (32 потока)<br>
+                    Частота: 3.4 - 4.9 ГГц<br>
+                    Сокет: AM4<br>
+                    Кэш: L1 - 1 MB, L2 - 8 MB, L3 - 64 MB<br>
+                    Поддерживаемая память: DDR4<br>
+                    Тепловыделение: 105 Вт<br>
+                    Техпроцесс: 7 нм
+                </p>
+                <div class="price">60 000 ₽</div>
+            </section>
+
+            <!-- AMD Ryzen 7000 Series -->
+            <section class="neon-border p-6" id="ryzen-5-7600x">
+                <h2 class="text-3xl neon-text mb-4">AMD Ryzen 5 7600X</h2>
+                <p class="text-lg mb-6">
+                    Ядра: 6 (12 потоков)<br>
+                    Частота: 4.7 - 5.3 ГГц<br>
+                    Сокет: AM5<br>
+                    Кэш: L1 - 384 KB, L2 - 6 MB, L3 - 32 MB<br>
+                    Поддерживаемая память: DDR5<br>
+                    Тепловыделение: 105 Вт<br>
+                    Техпроцесс: 5 нм
+                </p>
+                <div class="price">28 000 ₽</div>
+            </section>
+
+            <section class="neon-border p-6" id="ryzen-7-7700x">
+                <h2 class="text-3xl neon-text mb-4">AMD Ryzen 7 7700X</h2>
+                <p class="text-lg mb-6">
+                    Ядра: 8 (16 потоков)<br>
+                    Частота: 4.5 - 5.4 ГГц<br>
+                    Сокет: AM5<br>
+                    Кэш: L1 - 512 KB, L2 - 8 MB, L3 - 32 MB<br>
+                    Поддерживаемая память: DDR5<br>
+                    Тепловыделение: 105 Вт<br>
+                    Техпроцесс: 5 нм
+                </p>
+                <div class="price">35 000 ₽</div>
+            </section>
+
+            <section class="neon-border p-6" id="ryzen-9-7900x">
+                <h2 class="text-3xl neon-text mb-4">AMD Ryzen 9 7900X</h2>
+                <p class="text-lg mb-6">
+                    Ядра: 12 (24 потока)<br>
+                    Частота: 4.7 - 5.6 ГГц<br>
+                    Сокет: AM5<br>
+                    Кэш: L1 - 768 KB, L2 - 12 MB, L3 - 64 MB<br>
+                    Поддерживаемая память: DDR5<br>
+                    Тепловыделение: 170 Вт<br>
+                    Техпроцесс: 5 нм
+                </p>
+                <div class="price">50 000 ₽</div>
+            </section>
+
+            <section class="neon-border p-6" id="ryzen-9-7950x">
+                <h2 class="text-3xl neon-text mb-4">AMD Ryzen 9 7950X</h2>
+                <p class="text-lg mb-6">
+                    Ядра: 16 (32 потока)<br>
+                    Частота: 4.5 - 5.7 ГГц<br>
+                    Сокет: AM5<br>
+                    Кэш: L1 - 1 MB, L2 - 16 MB, L3 - 64 MB<br>
+                    Поддерживаемая память: DDR5<br>
+                    Тепловыделение: 170 Вт<br>
+                    Техпроцесс: 5 нм
+                </p>
+                <div class="price">70 000 ₽</div>
+            </section>
+        </div>
+    </main>
+</body>
+</html>

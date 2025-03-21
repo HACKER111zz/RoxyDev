@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Видеокарты Nvidia | Site</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet"/>
+    <style>
+        @font-face {
+            font-family: Cyber;
+            src: url("https://assets.codepen.io/605876/Blender-Pro-B.otf");
+            font-display: swap;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            justify-content: center;
+            min-height: 100vh;
+            font-family: 'Cyber', sans-serif;
+            background-color: #0d0d0d;
+            color: #ff004d;
+        }
+
+        .header {
+            position: relative;
+            height: 50px;
+            background-color: #000;
+            display: flex;
+            align-items: center;
+            padding: 0 20px;
+            width: 100%;
+            border: 2px solid #ff003c;
+            margin: -10px 10px 10px 10px;
+        }
+
+        .header-title {
+            font-size: 4rem;
+            margin-left: 0px;
+            margin-top: -400px;
+            white-space: nowrap;
+            overflow: hidden;
+            display: inline-block;
+            text-align: center;
+            flex-grow: 1;
+            border: 2px solid #ff004d;
+        }
+
+        .header-title span {
+            display: inline-block;
+            opacity: 0;
+            animation: fadeIn 0.5s forwards;
+        }
+
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        .flex-container {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .neon-border {
+            border: 2px solid #ff004d;
+            box-shadow: 0 0 5px #ff004d, 0 0 10px #ff004d, 0 0 20px #ff004d, 0 0 40px #ff004d;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            padding: 20px;
+            margin: 20px;
+            width: 300px;
+        }
+
+        .price {
+            font-size: 1.5rem;
+            color: #00bfff;
+            text-align: center;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body class="bg-black text-white">
+    <header class="header">
+        <h1 class="header-title neon-text">
+            <span>В</span><span>и</span><span>д</span><span>е</span><span>о</span><span>к</span><span>а</span><span>р</span><span>т</span><span>ы</span> <span>(</span><span>N</span><span>v</span><span>i</span><span>d</span><span>i</span><span>a</span><span>)</span>
+        </h1>
+    </header>
+    <main class="p-6 flex flex-col space-y-12">
+        <div class="flex-container">
+            <!-- Nvidia 10xx Series -->
+            <section class="neon-border p-6" id="gtx-1050">
+                <h2 class="text-3xl neon-text mb-4">Nvidia GTX 1050</h2>
+                <p class="text-lg mb-6">
+                    Видеопамять: 2 ГБ GDDR5<br>
+                    Частота ядра: 1354 МГц<br>
+                    Частота памяти: 7000 МГц<br>
+                    Интерфейс: PCIe 3.0 x16<br>
+                    Тепловыделение: 75 Вт
+                </p>
+                <div class="price">10 000 ₽</div>
+            </section>
+
+            <section class="neon-border p-6" id="gtx-1060">
+                <h2 class="text-3xl neon-text mb-4">Nvidia GTX 1060</h2>
+                <p class="text-lg mb-6">
+                    Видеопамять: 6 ГБ GDDR5<br>
+                    Частота ядра: 1506 МГц<br>
+                    Частота памяти: 8000 МГц<br>
+                    Интерфейс: PCIe 3.0 x16<br>
+                    Тепловыделение: 120 Вт
+                </p>
+                <div class="price">15 000 ₽</div>
+            </section>
+
+            <section class="neon-border p-6" id="gtx-1070">
+                <h2 class="text-3xl neon-text mb-4">Nvidia GTX 1070</h2>
+                <p class="text-lg mb-6">
+                    Видеопамять: 8 ГБ GDDR5<br>
+                    Частота ядра: 1506 МГц<br>
+                    Частота памяти: 8000 МГц<br>
+                    Интерфейс: PCIe 3.0 x16<br>
+                    Тепловыделение: 150 Вт
+                </p>
+                <div class="price">25 000 ₽</div>
+            </section>
+
+            <section class="neon-border p-6" id="gtx-1080">
+                <h2 class="text-3xl neon-text mb-4">Nvidia GTX 1080</h2>
+                <p class="text-lg mb-6">
+                    Видеопамять: 8 ГБ GDDR5X<br>
+                    Частота ядра: 1607 МГц<br>
+                    Частота памяти: 10000 МГц<br>
+                    Интерфейс: PCIe 3.0 x16<br>
+                    Тепловыделение: 180 Вт
+                </p>
+                <div class="price">35 000 ₽</div>
+            </section>
+
+            <!-- Nvidia 20xx Series -->
+            <section class="neon-border p-6" id="rtx-2060">
+                <h2 class="text-3xl neon-text mb-4">Nvidia RTX 2060</h2>
+                <p class="text-lg mb-6">
+                    Видеопамять: 6 ГБ GDDR6<br>
+                    Частота ядра: 1365 МГц<br>
+                    Частота памяти: 14000 МГц<br>
+                    Интерфейс: PCIe 3.0 x16<br>
+                    Тепловыделение: 160 Вт
+                </p>
+                <div class="price">30 000 ₽</div>
+            </section>
+
+            <section class="neon-border p-6" id="rtx-2070">
+                <h2 class="text-3xl neon-text mb-4">Nvidia RTX 2070</h2>
+                <p class="text-lg mb-6">
+                    Видеопамять: 8 ГБ GDDR6<br>
+                    Частота ядра: 1410 МГц<br>
+                    Частота памяти: 14000 МГц<br>
+                    Интерфейс: PCIe 3.0 x16<br>
+                    Тепловыделение: 175 Вт
+                </p>
+                <div class="price">40 000 ₽</div>
+            </section>
+
+            <section class="neon-border p-6" id="rtx-2080">
+                <h2 class="text-3xl neon-text mb-4">Nvidia RTX 2080</h2>
+                <p class="text-lg mb-6">
+                    Видеопамять: 8 ГБ GDDR6<br>
+                    Частота ядра: 1515 МГц<br>
+                    Частота памяти: 14000 МГц<br>
+                    Интерфейс: PCIe 3.0 x16<br>
+                    Тепловыделение: 215 Вт
+                </p>
+                <div class="price">50 000 ₽</div>
+            </section>
+
+            <!-- Nvidia 30xx Series -->
+            <section class="neon-border p-6" id="rtx-3060">
+                <h2 class="text-3xl neon-text mb-4">Nvidia RTX 3060</h2>
+                <p class="text-lg mb-6">
+                    Видеопамять: 12 ГБ GDDR6<br>
+                    Частота ядра: 1320 МГц<br>
+                    Частота памяти: 15000 МГц<br>
+                    Интерфейс: PCIe 4.0 x16<br>
+                    Тепловыделение: 170 Вт
+                </p>
+                <div class="price">35 000 ₽</div>
+            </section>
+
+            <section class="neon-border p-6" id="rtx-3070">
+                <h2 class="text-3xl neon-text mb-4">Nvidia RTX 3070</h2>
+                <p class="text-lg mb-6">
+                    Видеопамять: 8 ГБ GDDR6<br>
+                    Частота ядра: 1500 МГц<br>
+                    Частота памяти: 14000 МГц<br>
+                    Интерфейс: PCIe 4.0 x16<br>
+                    Тепловыделение: 220 Вт
+                </p>
+                <div class="price">50 000 ₽</div>
+            </section>
+
+            <section class="neon-border p-6" id="rtx-3080">
+                <h2 class="text-3xl neon-text mb-4">Nvidia RTX 3080</h2>
+                <p class="text-lg mb-6">
+                    Видеопамять: 10 ГБ GDDR6X<br>
+                    Частота ядра: 1440 МГц<br>
+                    Частота памяти: 19000 МГц<br>
+                    Интерфейс: PCIe 4.0 x16<br>
+                    Тепловыделение: 320 Вт
+                </p>
+                <div class="price">70 000 ₽</div>
+            </section>
+
+            <!-- Nvidia 40xx Series -->
+            <section class="neon-border p-6" id="rtx-4060">
+                <h2 class="text-3xl neon-text mb-4">Nvidia RTX 4060</h2>
+                <p class="text-lg mb-6">
+                    Видеопамять: 8 ГБ GDDR6<br>
+                    Частота ядра: 1830 МГц<br>
+                    Частота памяти: 17000 МГц<br>
+                    Интерфейс: PCIe 4.0 x16<br>
+                    Тепловыделение: 115 Вт
+                </p>
+                <div class="price">40 000 ₽</div>
+            </section>
+
+            <section class="neon-border p-6" id="rtx-4070">
+                <h2 class="text-3xl neon-text mb-4">Nvidia RTX 4070</h2>
+                <p class="text-lg mb-6">
+                    Видеопамять: 12 ГБ GDDR6X<br>
+                    Частота ядра: 1920 МГц<br>
+                    Частота памяти: 21000 МГц<br>
+                    Интерфейс: PCIe 4.0 x16<br>
+                    Тепловыделение: 200 Вт
+                </p>
+                <div class="price">60 000 ₽</div>
+            </section>
+
+            <section class="neon-border p-6" id="rtx-4080">
+                <h2 class="text-3xl neon-text mb-4">Nvidia RTX 4080</h2>
+                <p class="text-lg mb-6">
+                    Видеопамять: 16 ГБ GDDR6X<br>
+                    Частота ядра: 2205 МГц<br>
+                    Частота памяти: 22400 МГц<br>
+                    Интерфейс: PCIe 4.0 x16<br>
+                    Тепловыделение: 320 Вт
+                </p>
+                <div class="price">90 000 ₽</div>
+            </section>
+
+            <!-- Nvidia 50xx Series -->
+            <section class="neon-border p-6" id="rtx-5090">
+                <h2 class="text-3xl neon-text mb-4">Nvidia RTX 5090</h2>
+                <p class="text-lg mb-6">
+                    Видеопамять: 24 ГБ GDDR7<br>
+                    Частота ядра: 2500 МГц<br>
+                    Частота памяти: 28000 МГц<br>
+                    Интерфейс: PCIe 5.0 x16<br>
+                    Тепловыделение: 450 Вт
+                </p>
+                <div class="price">150 000 ₽</div>
+            </section>
+        </div>
+    </main>
+</body>
+</html>
